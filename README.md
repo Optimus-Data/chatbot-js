@@ -25,5 +25,8 @@ graph TD
     F -->|Sim| G[Gerar resposta contextual]
     F -->|Não| H[Responder padrão]
     G & D & H --> I[Armazenar no Redis]
+
+
+
 ---
 *© 2025 Optimus Data Technology - Licença Acadêmica (ver [LICENSE](LICENSE))*
