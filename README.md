@@ -1,4 +1,4 @@
-# Chatbot Câmara Municipal SP
+# DEMO Chatbot Câmara Municipal SP
 
 ## Visão Geral
 Chatbot especializado em informações sobre a Câmara Municipal de São Paulo e seus 55 vereadores (19ª legislatura, 2025-2028). Parte da iniciativa Pêndulo para aproximação cidadão-política.
