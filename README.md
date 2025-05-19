@@ -1,4 +1,4 @@
-# Chatbot Câmara Municipal SP
+# DEMO Chatbot Câmara Municipal SP
 
 ## Visão Geral
 Chatbot especializado em informações sobre a Câmara Municipal de São Paulo e seus 55 vereadores (19ª legislatura, 2025-2028). Parte da iniciativa Pêndulo para aproximação cidadão-política.
@@ -14,6 +14,9 @@ Chatbot especializado em informações sobre a Câmara Municipal de São Paulo e
 - **IA**: LangChain + OpenAI (GPT-4/GPT-3.5)
 - **Embeddings**: text-embedding-3-large
 
+---
+*© 2025 Optimus Data Technology - Licença Acadêmica (ver [LICENSE](LICENSE))*
+
 ## Fluxo de Inteligência
 ```mermaid
 graph TD
@@ -25,3 +28,7 @@ graph TD
     F -->|Sim| G[Gerar resposta contextual]
     F -->|Não| H[Responder padrão]
     G & D & H --> I[Armazenar no Redis]
+
+
+
+
