@@ -14,6 +14,9 @@ Chatbot especializado em informações sobre a Câmara Municipal de São Paulo e
 - **IA**: LangChain + OpenAI (GPT-4/GPT-3.5)
 - **Embeddings**: text-embedding-3-large
 
+---
+*© 2025 Optimus Data Technology - Licença Acadêmica (ver [LICENSE](LICENSE))*
+
 ## Fluxo de Inteligência
 ```mermaid
 graph TD
@@ -28,5 +31,4 @@ graph TD
 
 
 
----
-*© 2025 Optimus Data Technology - Licença Acadêmica (ver [LICENSE](LICENSE))*
+
