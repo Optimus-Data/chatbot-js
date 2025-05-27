@@ -11,7 +11,6 @@ const {
 const {
     llm,
     retrieval_llm,
-    checkIfRetriever,
     systemInstructions,
     retrievalPromptTemplate,
     createTrimmer,
@@ -44,7 +43,7 @@ const callModel = async (state) => {
         const lastMessage = trimmedMessages[trimmedMessages.length - 1].content;
         
         const recentMessages = trimmedMessages
-            .slice(-3)
+            .slice(-5)
             .filter(msg => 
                 msg?.content &&
                 !msg.content.toLowerCase().includes('olá') &&
@@ -54,20 +53,24 @@ const callModel = async (state) => {
             .map(msg => msg.content)
 			.join('\n');
         //========  USE RETRIEVER? ========//
-        const { isRetrieverNeeded, retrieverQuery } = await determineRetrievalNeed(
+        const { relevance, retrieverQuery } = await determineRetrievalNeed(
             lastMessage,
             recentMessages,
-            { checkIfRetriever, retrievalPromptTemplate, retrieval_llm }
+            { retrievalPromptTemplate, retrieval_llm}
         );
+        console.log("\n=== determineRetrievalNeed Result ===");
+        console.log("Relevance:", relevance, typeof relevance);
+        console.log("RetrieverQuery:", retrieverQuery);
 
-		if (!isRetrieverNeeded) {
-			console.log("\n======== SKIPPING RETRIEVER ========");
+
+        if (relevance === "false") {
+            console.log("\n======== SKIPPING RETRIEVER ========");
 			console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
             return await handleDirectResponse(trimmedMessages, { llm, systemInstructions });
 		} else {
 		//======= DEFAULT ANSWER? ======//
 			if (retrieverQuery === "lista completa de vereadores" || retrieverQuery === "lista completa de vereadores da Câmara"
-				|| retrieverQuery === "lista completa de vereadores da camara" || retrieverQuery === "lista completa de vereadores da Câmara Municipal de São Paulo"){
+				|| retrieverQuery === "lista completa de vereadores da camara"){
 				console.log("\n======== PREDEFINED RESPONSE ========")
 				console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
 				const formattedList = list;
