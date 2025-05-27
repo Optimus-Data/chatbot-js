@@ -1,0 +1,22 @@
+[
+	{
+	  "question": "1 – Como faço para agendar visita institucional na Câmara Municipal de São Paulo?",
+	  "answer": "Através de contato com o cerimonial, via telefone, no número 3396- 4696; posteriormente confirmando por e-mail no endereço: agenda@saopaulo.sp.leg.br",
+	  "links": [
+		{
+		  "text": "agenda@saopaulo.sp.leg.br",
+		  "url": "mailto:agenda@saopaulo.sp.leg.br"
+		}
+	  ]
+	},
+	{
+	  "question": "Quais são os canais de atendimento da Câmara Municipal de São Paulo?",
+	  "answer": "Os cidadãos podem entrar em contato com a Câmara Municipal de São Paulo pelos seguintes canais: Telefone da Câmara: 3396-4000, das 10h às 19h; Número da Ouvidoria: 0800-3-226272, das 8h às 19h; Atendimento presencial na Câmara Municipal de São Paulo: Viaduto Jacareí, 100 – 2o andar, das 9h às 18h; Fale Conosco: Canal de comunicação disponível no Portal da Câmara Municipal de São Paulo; E-mail da Ouvidoria/Câmara: o e-mail para contato é ouvidoria@saopaulo.sp.leg.br",
+	  "links": []
+	},
+	{
+	  "question": "Qual o prazo de resposta para solicitações enviadas à Ouvidoria?",
+	  "answer": "O prazo máximo de resposta é de 10 dias.",
+	  "links": []
+	}
+]
