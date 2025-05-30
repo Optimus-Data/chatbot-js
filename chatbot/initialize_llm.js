@@ -58,22 +58,20 @@ const callModel = async (state) => {
             recentMessages,
             { retrievalPromptTemplate, retrieval_llm}
         );
-        console.log("\n=== determineRetrievalNeed Result ===");
-        console.log("Relevance:", relevance, typeof relevance);
-        console.log("RetrieverQuery:", retrieverQuery);
-
 
         if (relevance === "false") {
             console.log("\n======== SKIPPING RETRIEVER ========");
-			console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
+            console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
+            console.log("======RELEVÂNCIA IDENTIFICADA", relevance);
             return await handleDirectResponse(trimmedMessages, { llm, systemInstructions });
 		} else {
 		//======= DEFAULT ANSWER? ======//
-			if (retrieverQuery === "lista completa de vereadores" || retrieverQuery === "lista completa de vereadores da Câmara"
-				|| retrieverQuery === "lista completa de vereadores da camara"){
+			if (retrieverQuery === "lista completa de vereadores" || retrieverQuery === "Lista completa de vereadores da Câmara Municipal de São Paulo." || retrieverQuery === "Lista completa de vereadores da Câmara."
+				|| retrieverQuery === "lista completa de vereadores da camara" || retrieverQuery === "lista completa de vereadores." || retrieverQuery === "Lista completa de vereadores."){
 				console.log("\n======== PREDEFINED RESPONSE ========")
 				console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
-				const formattedList = list;
+                console.log("=======Last Message", lastMessage);
+                const formattedList = list;
 				return {
 					messages: [new AIMessage({ content: formattedList })],
 				};
