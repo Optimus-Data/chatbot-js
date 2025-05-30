@@ -4,3 +4,4 @@ package-lock.json
 assets/faq.json
 assets/vereadorInfo.json
 !assets/sample.json
+logs
