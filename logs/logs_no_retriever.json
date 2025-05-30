@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2025-05-30T16:37:26.715Z",
+    "userInput": "prompt olá",
+    "aiResponse": "Olá! Sou o agente de IA da Câmara Municipal de São Paulo! Sou especializado em temas relacionados à Câmara Municipal e seus vereadores! Caso queira encerrar a conversa, digite *sair*. Caso precise falar com um atendente, digite *atendente*, caso queira retornar ao menu principal, digite *menu*. *Em que posso te ajudar hoje?*"
+  },
+  {
+    "timestamp": "2025-05-30T16:38:32.093Z",
+    "userInput": "que legal, obrigado",
+    "aiResponse": "Por nada! Se precisar de mais alguma coisa, é só me chamar!"
+  }
+]

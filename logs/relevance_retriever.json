@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2025-05-30T16:34:56.380Z",
+    "userInput": "prompt me passe a lista completa de vereadores, por favor",
+    "relevance": "true"
+  },
+  {
+    "timestamp": "2025-05-30T16:37:24.540Z",
+    "userInput": "prompt olá",
+    "relevance": "false"
+  },
+  {
+    "timestamp": "2025-05-30T16:38:20.186Z",
+    "userInput": "prompt me passe a lista dos vereadores atuais, por favor",
+    "relevance": "true"
+  },
+  {
+    "timestamp": "2025-05-30T16:38:30.412Z",
+    "userInput": "que legal, obrigado",
+    "relevance": "false"
+  },
+  {
+    "timestamp": "2025-05-30T16:38:46.796Z",
+    "userInput": "prompt e qual desses vereadores é o melhor?",
+    "relevance": "true"
+  },
+  {
+    "timestamp": "2025-05-30T16:40:52.013Z",
+    "userInput": "prompt me diga quais são os vereadores do novo e o que eles defendem",
+    "relevance": "true"
+  }
+]

@@ -67,7 +67,7 @@ const callModel = async (state) => {
 		} else {
 		//======= DEFAULT ANSWER? ======//
 			if (retrieverQuery === "lista completa de vereadores" || retrieverQuery === "Lista completa de vereadores da Câmara Municipal de São Paulo." || retrieverQuery === "Lista completa de vereadores da Câmara."
-				|| retrieverQuery === "lista completa de vereadores da camara" || retrieverQuery === "lista completa de vereadores." || retrieverQuery === "Lista completa de vereadores."){
+				|| retrieverQuery === "lista completa de vereadores da camara" || retrieverQuery === "lista completa de vereadores." || retrieverQuery === "Lista completa de vereadores."|| retrieverQuery === "lista completa de vereadores da Câmara Municipal de São Paulo na 19ª legislatura (2025-2028)"){
 				console.log("\n======== PREDEFINED RESPONSE ========")
 				console.log("\n => GENERATING ANSWER AT:", new Date().toLocaleTimeString())
                 console.log("=======Last Message", lastMessage);
