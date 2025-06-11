@@ -5,3 +5,4 @@ assets/faq.json
 assets/vereadorInfo.json
 !assets/sample.json
 logs
+/database
