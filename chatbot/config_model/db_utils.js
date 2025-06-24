@@ -132,9 +132,9 @@ async function loadRetrieverFromStore() {
         console.log("Vector Store carregado com sucesso.");
 
         const retriever = vectorStore.asRetriever({
-            k: 14,
+            k: 18,
             // filter: null,
-            scoreThreshold: 0.7,
+            scoreThreshold: 0.8,
         });
         return retriever;
     } catch (error) {
