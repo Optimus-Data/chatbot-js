@@ -2,6 +2,7 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("node:path");
 const { Document } = require("@langchain/core/documents"); 
+const { json } = require("node:stream/consumers");
 const DATABASE_DIRECTORY = path.join(process.cwd(), "database");
 const DOCS_PATH = path.join(DATABASE_DIRECTORY, "docs.json"); 
 
@@ -69,8 +70,33 @@ async function loadDocumentsFromJson(filePath) {
           console.warn(`Item inválido no vereadorInfo.json (índice ${index}):`, item);
         }
       }
+    } else if (fileName === 'projects.json') {
+      for (let i = 0; i < jsonData.length; i++) {
+        const vereador = jsonData[i].nome;
+        const projetos = jsonData[i].projetos;
+        
+        for (let j = 0; j < projetos.length; j++) {
+          const projeto = projetos[j];
+          let pageContent = `Vereador: ${vereador}\n`;
+          pageContent += `Título do Projeto: ${projeto.titulo}\n`;
+          pageContent += `Ementa: ${projeto.ementa}\n`;
+          
+          documents.push(new Document({
+            pageContent: pageContent.trim(),
+            metadata: {
+              source: fileName,
+              type: 'project',
+              vereador: vereador,
+              project_id: projeto.project_id,
+              titulo: projeto.titulo,
+              last_update: projeto.tramitacao?.length > 0 
+                ? projeto.tramitacao[projeto.tramitacao.length - 1].date 
+                : 'N/A'
+            }
+          }));
+        }
+      }
     }
-
     console.log(`Arquivo ${fileName} processado. ${documents.length} documentos criados.`);
     return documents;
 

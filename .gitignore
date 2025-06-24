@@ -3,6 +3,7 @@ node_modules
 package-lock.json
 assets/faq.json
 assets/vereadorInfo.json
+assets/projects.json
 !assets/sample.json
 logs
 database
