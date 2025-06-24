@@ -73,13 +73,22 @@ async function loadDocumentsFromJson(filePath) {
     } else if (fileName === 'projects.json') {
       for (let i = 0; i < jsonData.length; i++) {
         const vereador = jsonData[i].nome;
+        const partido = jsonData[i].partido;
         const projetos = jsonData[i].projetos;
         
         for (let j = 0; j < projetos.length; j++) {
           const projeto = projetos[j];
           let pageContent = `Vereador: ${vereador}\n`;
+          pageContent += `Partido: ${partido}\n`;
           pageContent += `Título do Projeto: ${projeto.titulo}\n`;
           pageContent += `Ementa: ${projeto.ementa}\n`;
+
+
+          if (projeto.tramitacao && projeto.tramitacao.length > 0) {
+            const ultimaTramitacao = projeto.tramitacao[projeto.tramitacao.length - 1];
+            pageContent += `Última tramitação: ${ultimaTramitacao.event} em ${ultimaTramitacao.date} (${ultimaTramitacao.department})\n`;
+            pageContent += `Status: Em tramitação\n`;
+          }
           
           documents.push(new Document({
             pageContent: pageContent.trim(),
