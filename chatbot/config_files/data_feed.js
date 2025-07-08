@@ -81,6 +81,34 @@ const list = `Os atuais vereadores da Câmara, separados por partido são:
     PV (1 vereador)
     55. Roberto Trípoli`
 
-module.exports = {
-    list
+const token = process.env.ML_API_TOKEN;
+const config = {
+	headers: {
+		"Content-Type": "application/json",
+		"X-API-Key": token
+	},
 };
+const padroes_verificacao = [
+	"lista completa de vereadores",
+	"Lista completa de vereadores da Câmara Municipal de São Paulo.",
+	"Lista completa de vereadores da Câmara.",
+	"lista completa de vereadores da camara",
+	"lista completa de vereadores.",
+	"Lista completa de vereadores."
+];
+
+const baseUrl = process.env.ML_BASE_URL;
+const url = `${baseUrl}/classify_relevance`;
+const defaultErrorMessage = "Ops... Tive um problema técnico por aqui! Favor, digite atendente! Já estou recebendo a manutenção necessária, por favor, tente novamente mais tarde!"
+const defaultDataError = "Não conseguimos nenhuma informação a respeito, informe que não sabe a resposta."
+const noDataFound = "Nenhum dado encontrado a respeito"
+
+module.exports = {
+    list,
+	config,
+	padroes_verificacao,
+	url,
+	defaultErrorMessage,
+	defaultDataError,
+	noDataFound
+}
